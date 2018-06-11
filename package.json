@@ -1,7 +1,7 @@
 {
   "name": "bosom",
   "version": "1.0.0",
-  "description": "Just read and write a JSON file in Node.js",
+  "description": "Read and write a JSON file in Node.js",
   "main": "build",
   "scripts": {
     "t": "zoroaster -b",
