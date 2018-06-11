@@ -11,7 +11,8 @@
     "test-watch": "yarn test -w",
     "lint": "eslint .",
     "e": "node example",
-    "example/": "yarn e example/example.js",
+    "example/read.js": "yarn e example/read.js",
+    "example/write.js": "yarn e example/write.js",
     "build": "babel src --out-dir build --source-maps"
   },
   "files": [
