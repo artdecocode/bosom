@@ -26,11 +26,18 @@ const writeJSON = async (path, data, config) => {
 }
 
 /**
+ * @typedef {Object} Config
+ * @property {number} [space=0] How many spaces to use to indent JSON when writing (default no indent).
+ * @property {string} [mode=spread] The write mode, only spread at the moment which will make the new data be merged on top of the old one.
+ */
+
+/**
  * Read or write a JSON file.
  * @param {string} path Path to the file to read.
  * @param {object} data Data to write to the file (if JSON file exists, fields in it will be overridden).
- * @param {object} config how to write data.
- * @param {string} [config.space=0] How many spaces to use to indent JSON when writing (default no indent).
+ * @param {Config} config how to write data.
+ * @param {number} [config.space=0] How many spaces to use to indent JSON when writing (default no indent).
+ * @param {string} [config.mode=spread] The write mode, only spread at the moment which will make the new data be merged on top of the old one.
  */
 const fileJson = async (path, data, config = {}) => {
   if (data) {

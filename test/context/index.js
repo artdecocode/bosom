@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { unlink } from 'fs'
+import { unlink, readFile } from 'fs'
 import { debuglog } from 'util'
 
 const data = {
@@ -17,6 +17,9 @@ export default class Context {
   get data() {
     return data
   }
+  get SNAPSHOT_DIR() {
+    return resolve(__dirname, '../snapshot')
+  }
   get path() {
     return resolve(__dirname, '../fixtures/file.json')
   }
@@ -30,5 +33,18 @@ export default class Context {
         r()
       })
     })
+  }
+  /**
+   * Read the contents of the temp file.
+   */
+  async readTemp() {
+    /** @type {string} */
+    const res = await new Promise((r, j) => {
+      readFile(this.tempPath, (err, d) => {
+        if (err) return j(err)
+        return r(`${d}`)
+      })
+    })
+    return res
   }
 }
