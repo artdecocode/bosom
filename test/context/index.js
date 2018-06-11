@@ -1,7 +1,12 @@
 import { resolve } from 'path'
-import file from '../fixtures/file.json'
 import { unlink } from 'fs'
 import { debuglog } from 'util'
+
+const data = {
+  test: true,
+  program: 'file-json',
+  i: 774,
+}
 
 const LOG = debuglog('file-json')
 
@@ -9,17 +14,8 @@ const LOG = debuglog('file-json')
  * A testing context for the file-json.
  */
 export default class Context {
-  // async _init() {
-  //   console.log('init context')
-  // }
-  // /**
-  //  * Example method.
-  //  */
-  // example() {
-  //   return 'OK'
-  // }
-  get file() {
-    return file
+  get data() {
+    return data
   }
   get path() {
     return resolve(__dirname, '../fixtures/file.json')
@@ -29,11 +25,9 @@ export default class Context {
   }
   async _destroy() {
     await new Promise((r) => {
-      unlink(this.tempPath, () => {
-        // if (err) return j(err)
-        LOG('removed temp file')
+      unlink(this.tempPath, (e) => {
+        !e && LOG('removed temp file')
         r()
-        // r()
       })
     })
   }

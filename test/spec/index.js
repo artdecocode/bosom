@@ -8,14 +8,14 @@ const T = {
   'is a function'() {
     equal(typeof fileJson, 'function')
   },
-  async 'calls package without error'({ file, path }) {
+  async 'reads json from the file'({ data, path }) {
     const json = await fileJson(path)
-    deepEqual(json, file)
+    deepEqual(json, data)
   },
-  async 'calls test context method'({ file, tempPath }) {
-    await fileJson(tempPath, file)
+  async 'writes json data'({ data, tempPath }) {
+    await fileJson(tempPath, data)
     const r = require(tempPath)
-    deepEqual(r, file)
+    deepEqual(r, data)
   },
 }
 
