@@ -1,5 +1,5 @@
 {
-  "name": "file-json",
+  "name": "bosom",
   "version": "1.0.0",
   "description": "Just read and write a JSON file in Node.js",
   "main": "build",
@@ -20,17 +20,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/artdecocode/file-json.git"
+    "url": "git://github.com/artdecocode/bosom.git"
   },
   "keywords": [
-    "file-json"
+    "bosom"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/artdecocode/file-json/issues"
+    "url": "https://github.com/artdecocode/bosom/issues"
   },
-  "homepage": "https://github.com/artdecocode/file-json#readme",
+  "homepage": "https://github.com/artdecocode/bosom#readme",
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.49",
     "@babel/core": "7.0.0-beta.49",

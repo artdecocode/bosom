@@ -1,5 +1,5 @@
-import fileJson from './build'
+import bosom from './build'
 
 (async () => {
-  await fileJson('test.json')
+  await bosom('test.json')
 })()

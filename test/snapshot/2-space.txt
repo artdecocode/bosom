@@ -1,5 +1,5 @@
 {
   "test": true,
-  "program": "file-json",
+  "program": "bosom",
   "i": 774
 }

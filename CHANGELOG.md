@@ -2,5 +2,5 @@
 
 ### 1.0.0
 
-- Create `file-json` with [`mnp`][https://mnpjs.org]
+- Create `bosom` with [`mnp`][https://mnpjs.org]
 - [repository]: `src`, `test`

@@ -1,7 +1,7 @@
 import { debuglog } from 'util'
 import { readFile, createWriteStream } from 'fs'
 
-const LOG = debuglog('file-json')
+const LOG = debuglog('bosom')
 
 const re = async (path) => {
   const ret = await new Promise((r, j) => {
@@ -39,7 +39,7 @@ const writeJSON = async (path, data, config) => {
  * @param {number} [config.space=0] How many spaces to use to indent JSON when writing (default no indent).
  * @param {string} [config.mode=spread] The write mode, only spread at the moment which will make the new data be merged on top of the old one.
  */
-const fileJson = async (path, data, config = {}) => {
+const bosom = async (path, data, config = {}) => {
   if (data) {
     const res = writeJSON(path, data, config)
     return res
@@ -50,4 +50,4 @@ const fileJson = async (path, data, config = {}) => {
   return res
 }
 
-export default fileJson
+export default bosom

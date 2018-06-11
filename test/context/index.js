@@ -4,14 +4,14 @@ import { debuglog } from 'util'
 
 const data = {
   test: true,
-  program: 'file-json',
+  program: 'bosom',
   i: 774,
 }
 
-const LOG = debuglog('file-json')
+const LOG = debuglog('bosom')
 
 /**
- * A testing context for the file-json.
+ * A testing context for the bosom.
  */
 export default class Context {
   get data() {

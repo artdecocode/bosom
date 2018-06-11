@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
-import fileJson from '../src'
+import bosom from '../src'
 import { resolve } from 'path'
 
 (async () => {
   try {
     const p = resolve(__dirname, 'temp.json')
-    await fileJson(p, {
+    await bosom(p, {
       'my-data': true,
       bar: 'foo',
     }, {
