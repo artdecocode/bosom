@@ -57,6 +57,7 @@ import { resolve } from 'path'
 })()
 ```
 ```js
+t
 { hello: 'world', foo: true, bar: -1 }
 ```
 
@@ -82,8 +83,7 @@ When data is passed, `bosom` will write into that file the serialised version of
  </tr>
  <tr></tr>
  <tr>
-  <td>The <em>replacer function</em> used when serializing data
-(see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"><code>JSON.stringify</code> documentation</a>).</td>
+  <td>The <em>replacer function</em> used when serializing data (see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"><code>JSON.stringify</code> documentation</a>).</td>
  </tr>
 </table>
 
@@ -111,6 +111,7 @@ import { resolve } from 'path'
 })()
 ```
 ```js
+t
 { 'my-data': true, bar: 'foo' }
 ```
 

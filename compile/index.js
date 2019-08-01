@@ -24,4 +24,4 @@ module.exports = bosom
  * @prop {!Function} [replacer] The _replacer function_ used when serializing data (see [`JSON.stringify` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)).
  */
 
- console.log('t')
+//  console.log('t')
