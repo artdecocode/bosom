@@ -4,26 +4,33 @@
   "description": "Read and write a JSON file in Node.js",
   "main": "build",
   "scripts": {
-    "t": "zoroaster -b",
-    "test": "zoroaster -b test/spec",
-    "test-build": "BABEL_ENV=test-build yarn test",
-    "test-all": "yarn-s test test-build",
-    "test-watch": "yarn test -w",
+    "t": "zoroaster -a",
+    "test": "yarn t test/spec",
+    "test-compile": "ALAMODE_ENV=test-compile yarn test",
+    "compile": "depack-dev src/depack -o compile/bosom.js -a -c -p --source_map_include_content -O 2018",
+    "doc": "NODE_DEBUG=doc doc -o README.md",
     "lint": "eslint .",
-    "e": "node example",
+    "e": "alanode",
     "example/read.js": "yarn e example/read.js",
     "example/write.js": "yarn e example/write.js",
-    "build": "babel src --out-dir build --source-maps"
+    "externs": "typal types/externs.js",
+    "d1": "typal compile/index.js -c",
+    "d": "yarn-s d1 externs"
   },
   "files": [
-    "build"
+    "compile",
+    "externs.js"
   ],
+  "externs": "externs.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/artdecocode/bosom.git"
   },
   "keywords": [
-    "bosom"
+    "bosom",
+    "json",
+    "read",
+    "write"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
@@ -32,16 +39,11 @@
   },
   "homepage": "https://github.com/artdecocode/bosom#readme",
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.49",
-    "@babel/core": "7.0.0-beta.49",
-    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.49",
-    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.49",
-    "@babel/register": "7.0.0-beta.49",
-    "babel-plugin-transform-rename-import": "2.2.0",
-    "eslint": "4.19.1",
-    "eslint-config-artdeco": "1.0.0",
-    "snapshot-context": "2.0.1",
-    "yarn-s": "1.1.0",
-    "zoroaster": "2.1.0"
+    "alamode": "^2.3.6",
+    "documentary": "^1.29.0",
+    "eslint-config-artdeco": "^1.0.1",
+    "typal": "^1.19.0",
+    "yarn-s": "^1.1.0",
+    "zoroaster": "^4.1.1-alpha"
   }
 }

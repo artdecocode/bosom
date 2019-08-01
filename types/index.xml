@@ -1,0 +1,11 @@
+<types ns="_bosom">
+  <type record name="Options" desc="Options for writing.">
+    <prop number name="space" opt>
+      How many spaces to use for indentation.
+    </prop>
+    <prop type="!Function" name="replacer" opt>
+      The _replacer function_ used when serializing data
+      (see [`JSON.stringify` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)).
+    </prop>
+  </type>
+</types>
