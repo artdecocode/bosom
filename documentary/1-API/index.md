@@ -21,13 +21,13 @@ The function which can be used for both reading and writing of data. When only a
 `bosom` will read the file when only a path is passed.
 
 %EXAMPLE: example/read, ../src => bosom%
-%FORK example/read%
+%FORK-js example/read%
 
 When data is passed, `bosom` will write into that file the serialised version of the object. An optional configuration can be passed along to the `JSON.stringify` method.
 
 <typedef narrow>types/index.xml</typedef>
 
 %EXAMPLE: example/write, ../src => bosom%
-%FORK example/write%
+%FORK-js example/write%
 
 %~%
