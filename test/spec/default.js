@@ -1,6 +1,7 @@
 import { equal, deepEqual } from '@zoroaster/assert'
 import Context from '../context'
 import bosom from '../../src'
+import { resolve as res } from 'path'
 
 /** @type {Object.<string, (c: Context)>} */
 const T = {
@@ -12,17 +13,18 @@ const T = {
     const json = await bosom(path)
     deepEqual(json, data)
   },
-  async 'writes json data'({ data, tempPath }) {
-    await bosom(tempPath, data)
-    const r = require(tempPath)
+  async 'writes json data'({ data, resolve }) {
+    const path = resolve('temp.json')
+    await bosom(path, data)
+    const r = require(res(path))
     deepEqual(r, data)
   },
-  async 'writes json data with spaces'({ data, tempPath, readTemp }) {
-    await bosom(tempPath, data, {
+  async 'writes json data with spaces'({ data, resolve, snapshot }) {
+    const path = resolve('temp.json')
+    await bosom(path, data, {
       space: 2,
     })
-    const actual = await readTemp()
-    return actual
+    return await snapshot()
   },
 }
 

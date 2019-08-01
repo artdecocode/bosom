@@ -1,6 +1,4 @@
-import { resolve } from 'path'
-import { unlink, readFile } from 'fs'
-import { debuglog } from 'util'
+import TempContext from 'temp-context'
 
 const data = {
   test: true,
@@ -8,43 +6,14 @@ const data = {
   i: 774,
 }
 
-const LOG = debuglog('bosom')
-
 /**
  * A testing context for the bosom.
  */
-export default class Context {
+export default class Context extends TempContext {
   get data() {
     return data
   }
-  get SNAPSHOT_DIR() {
-    return resolve(__dirname, '../snapshot')
-  }
   get path() {
-    return resolve(__dirname, '../fixtures/file.json')
-  }
-  get tempPath() {
-    return resolve(__dirname, '../fixtures/temp.json')
-  }
-  async _destroy() {
-    await new Promise((r) => {
-      unlink(this.tempPath, (e) => {
-        !e && LOG('removed temp file')
-        r()
-      })
-    })
-  }
-  /**
-   * Read the contents of the temp file.
-   */
-  async readTemp() {
-    /** @type {string} */
-    const res = await new Promise((r, j) => {
-      readFile(this.tempPath, (err, d) => {
-        if (err) return j(err)
-        return r(`${d}`)
-      })
-    })
-    return res
+    return 'test/fixture/file.json'
   }
 }
