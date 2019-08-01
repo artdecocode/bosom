@@ -1,7 +1,7 @@
 {
   "name": "bosom",
   "version": "1.0.0",
-  "description": "Read and write a JSON file in Node.js",
+  "description": "Read and write JSON files easily within one function.",
   "main": "compile/index.js",
   "module": "src/index.js",
   "scripts": {
@@ -12,8 +12,6 @@
     "doc": "ALAMODE_ENV=test-compile NODE_DEBUG=doc doc -o README.md",
     "lint": "eslint .",
     "e": "alanode",
-    "example/read.js": "yarn e example/read.js",
-    "example/write.js": "yarn e example/write.js",
     "externs": "typal types/externs.js",
     "d1": "typal compile/index.js -c",
     "d": "yarn-s d1 externs"
@@ -21,9 +19,9 @@
   "files": [
     "compile",
     "src",
-    "externs.js"
+    "types/externs.js"
   ],
-  "externs": "externs.js",
+  "externs": "types/externs.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/artdecocode/bosom.git"
