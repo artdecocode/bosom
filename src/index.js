@@ -16,8 +16,8 @@ const writeJSON = async (path, data, config) => {
 /**
  * Read or write a JSON file.
  * @param {string} path Path to the file to read.
- * @param {object} data Data to write to the file (if JSON file exists, fields in it will be overridden).
- * @param {_bosom.Options} config how to write data.
+ * @param {Object} [data] Data to write to the file (if JSON file exists, fields in it will be overridden).
+ * @param {!_bosom.Options} [config] how to write data.
  */
 const bosom = async (path, data, config = {}) => {
   if (data) {

@@ -47,9 +47,11 @@
     "temp-context": "^2.1.3",
     "typal": "^1.19.0",
     "yarn-s": "^1.1.0",
-    "zoroaster": "^4.1.1-alpha"
+    "zoroaster": "^4.1.1-alpha",
+    "@wrote/read": "^1.0.4",
+    "@wrote/write": "^1.0.4"
   },
-  "dependencies": {
+  "srcDependencies": {
     "@wrote/read": "^1.0.4",
     "@wrote/write": "^1.0.4"
   }
