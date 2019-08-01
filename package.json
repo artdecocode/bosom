@@ -1,6 +1,6 @@
 {
   "name": "bosom",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Read and write JSON files easily within one function.",
   "main": "compile/index.js",
   "module": "src/index.js",
@@ -39,15 +39,15 @@
   },
   "homepage": "https://github.com/artdecocode/bosom#readme",
   "devDependencies": {
+    "@wrote/read": "^1.0.4",
+    "@wrote/write": "^1.0.4",
     "alamode": "^2.3.6",
     "documentary": "^1.29.0",
     "eslint-config-artdeco": "^1.0.1",
     "temp-context": "^2.1.3",
     "typal": "^1.19.0",
     "yarn-s": "^1.1.0",
-    "zoroaster": "^4.1.1-alpha",
-    "@wrote/read": "^1.0.4",
-    "@wrote/write": "^1.0.4"
+    "zoroaster": "^4.1.1-alpha"
   },
   "srcDependencies": {
     "@wrote/read": "^1.0.4",
